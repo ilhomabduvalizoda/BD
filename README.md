@@ -152,11 +152,13 @@ SELECT name, price FROM products WHERE count > 0 ORDER BY price ASC LIMIT 4;
 
 3.Выберите из таблицы orders три последних заказа (по дате date) стоимостью от 3200 рублей и выше. Данные отсортируйте по дате в обратном порядке.
 
+![428265431-09fb9dc4-4846-42ea-b3ee-39a4c7f5914d](https://github.com/user-attachments/assets/909ae7a9-a3aa-42ba-b030-34aacd93f9d8)
 
 
 Решение:
 SELECT * FROM orders WHERE sum >= 3200 ORDER BY date DESC LIMIT 3;
-image
+
+
 
 4.Создайте данную таблицу:
 image
