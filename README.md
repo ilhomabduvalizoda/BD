@@ -1,4 +1,5 @@
 Лаба 1
+
 1.Выберите из таблицы orders все заказы
    
    SELECT * FROM orders;
@@ -25,6 +26,7 @@ SELECT id, SUM FROM orders WHERE products_count >3;
 ![415885262-2f208a4d-1ca9-4cfb-8e36-058f3dc827e7](https://github.com/user-attachments/assets/9519238c-32a1-47d6-a7e9-a003f3c8a91e)
 
 Лаба 2
+
 1.Выберите из таблицы orders 3 самых дешевых заказа за всё время. Данные нужно отсортировать в порядке убывания цены. Отмененные заказы не учитывайте.
 
 SELECT * FROM orders WHERE STATUS != 'отменен' ORDER BY sum ASC LIMIT 3;
@@ -62,3 +64,5 @@ UPDATE products SET name = 'PS5' WHERE name = 'IMAC';
 ![418256518-45f95fbc-ed0f-4fd9-bc35-5b8a190ecc46](https://github.com/user-attachments/assets/bf1b6d3b-8619-4cb2-bb48-5b302590949f)
 
 ![418256567-1288a625-6daf-4162-8be0-1e61b328eea4](https://github.com/user-attachments/assets/69fd980a-3354-45c3-87c3-ed14389eff3d)
+
+
