@@ -53,16 +53,25 @@ INSERT INTO orders (id, products, sum) VALUES (6, 4, 8000);
 4.Добавьте в таблицу products новый товар — «VR-очки», стоимостью 70000 рублей в количестве (count) 2 штук.
 
 INSERT INTO products (id, name, price, count) VALUES (7, 'VR-очки', 70000, 2);
+
 ![418256147-dabf7dc4-b441-4a55-8bea-48950d5cd7dc](https://github.com/user-attachments/assets/8c1145ce-2cbd-43d3-9b43-ccbb4685d06f)
 
 ![418255956-11d54dfc-f39b-4381-8b39-08db0a22c9a2 (1)](https://github.com/user-attachments/assets/600e0c09-672e-4c80-ac20-9fec60f384f7)
 
 5.В таблицу products внесли данные с ошибкой, вместо "PS5" в наименовании написали IMAC. Исправьте ошибку.
 
-UPDATE products SET name = 'PS5' WHERE name = 'IMAC';
-
 ![418256518-45f95fbc-ed0f-4fd9-bc35-5b8a190ecc46](https://github.com/user-attachments/assets/bf1b6d3b-8619-4cb2-bb48-5b302590949f)
 
 ![418256567-1288a625-6daf-4162-8be0-1e61b328eea4](https://github.com/user-attachments/assets/69fd980a-3354-45c3-87c3-ed14389eff3d)
 
+Лр 3
+1.Создайте таблицу users с полем id типа INT и двумя текстовыми полями, которые будут хранить имя (first_name) и фамилию (last_name). Длина имени и фамилии не превышает 50 символов. Добавьте в таблицу трех пользователей: Дмитрия Иванова, Анатолия Белого и Дениса Давыдова.
 
+CREATE TABLE users (ID INT, first_name VARCHAR(50), last_name VARCHAR(50));
+INSERT INTO users (id, first_name, last_name)
+VALUE (1,'Дмитрий', 'Иванов'),
+(2, 'Анатолий', 'Белый'),
+(3, 'Денис', 'Давыдов');
+![418255692-d729b1c5-e31a-4e60-88c1-ad851c497f26](https://github.com/user-attachments/assets/654cbd1c-e44d-4f91-9dab-060c4247f42a)
+
+![418255719-4096d56a-3ebb-4e19-a839-ecc0fd60b75a](https://github.com/user-attachments/assets/32e88302-cb74-4ba8-bc75-b9b51189e777)
