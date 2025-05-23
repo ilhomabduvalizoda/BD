@@ -1,6 +1,6 @@
 Лаба 1
 1.Выберите из таблицы orders все заказы
-SELECT * FROM orders;
+   SELECT * FROM orders;
 ![415884576-23460e5a-748e-4c98-af98-3b637623958c](https://github.com/user-attachments/assets/f3c0cc0b-c957-4b93-a2a9-8bfa88fdf510)
 2.Выберите из таблицы orders все заказы кроме новых. У новых заказов status равен "new". Использовать in
 SELECT * FROM orders WHERE STATUS IN ('cancelled','in_progress','delivery');
