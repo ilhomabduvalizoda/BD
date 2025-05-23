@@ -64,7 +64,7 @@ INSERT INTO products (id, name, price, count) VALUES (7, 'VR-очки', 70000, 2
 
 ![418256567-1288a625-6daf-4162-8be0-1e61b328eea4](https://github.com/user-attachments/assets/69fd980a-3354-45c3-87c3-ed14389eff3d)
 
-Лр 3
+Лаба 3
 1.Создайте таблицу users с полем id типа INT и двумя текстовыми полями, которые будут хранить имя (first_name) и фамилию (last_name). Длина имени и фамилии не превышает 50 символов. Добавьте в таблицу трех пользователей: Дмитрия Иванова, Анатолия Белого и Дениса Давыдова.
 
 CREATE TABLE users (ID INT, first_name VARCHAR(50), last_name VARCHAR(50));
@@ -75,3 +75,54 @@ VALUE (1,'Дмитрий', 'Иванов'),
 ![418255692-d729b1c5-e31a-4e60-88c1-ad851c497f26](https://github.com/user-attachments/assets/654cbd1c-e44d-4f91-9dab-060c4247f42a)
 
 ![418255719-4096d56a-3ebb-4e19-a839-ecc0fd60b75a](https://github.com/user-attachments/assets/32e88302-cb74-4ba8-bc75-b9b51189e777)
+
+Лаба 4
+1.Создайте таблицу users для хранения информации о пользователях сайта. В таблице должны быть следующие поля: id – идентификатор, целое положительное; email – адрес электронной почты, строка не более 100 символов; date_joined – дата регистрации (достаточно хранить дату, без времени) last_activity – дата и время последней активности (с точностью до секунд).
+
+![423033439-b7acc72a-7fa5-4fdd-91ff-c59c92db939c](https://github.com/user-attachments/assets/68c24b23-0839-49bf-a0e4-2992864d011f)
+
+Неверное решение:
+
+CREATE TABLE users( id INT UNSIGNED, email VARCHAR(100), date_joined DATE, last_activity DATETIME ); INSERT INTO users (id, email, date_joined, last_activity) VALUES (1, "user1@domain.com", "2014-12-12", "2016-04-08 12:34:54") INSERT INTO users (id, email, date_joined, last_activity) VALUES (2, "user2@domain.com", "2014-12-12", "2017-02-13 11:46:53") INSERT INTO users (id, email, date_joined, last_activity) VALUES (3, "user3@domain.com", "2014-12-13", "2017-04-04 05:12:07")
+
+Верное решение:
+
+create table users ( id int(10) unsigned, email varchar (100), date_joined date, last_activity datetime );
+insert into users (id, email, date_joined,last_activity) values (1,'user1@domain.com', '2014-12-12','2016-04-08 12:34:54'),
+(2,'user2@domain.com', '2014-12-12','2017-02-13 11:46:53'), (3,'user3@domain.com', '2014-12-13','2017-04-04 05:12:07');
+
+![423033648-d1e72b07-f656-41cf-aa8d-06c4cd585b0c](https://github.com/user-attachments/assets/4cfefd49-f367-47d5-95c0-6eaf2953a6ae)
+
+2.Создайте таблицу calendar для хранения календаря посетителей. В таблице должны быть следующие поля: id – идентификатор записи в календаре, целое положительное; user_id – идентификатор пользователя, целое положительное; doctor_id – идентификатор доктора, целое положительное; visit_date – дата и время визита (точность до секунд).
+
+![423033758-9fdfbd4f-2646-49d5-a954-94c48b90baf7](https://github.com/user-attachments/assets/d84d4ed8-2c71-48cb-8f6e-43d3bd3208d2)
+
+Неверное решение:
+
+Create table calendar ( id int unsigned, user_id int unsigned, doctor_id int unsigned, visit_date datetime); Insert into calendar (id, user_id, doctor_id, visit_date) Values (1, 1914 , 1, '2017-04-08 12:00:00'), (2, 12, 1, '2017-04-08 12:30:00'), (3, 4641, 2, '2017-04-09 09:00:00'), (4, 4641, 2,'2017-04-09 09:00:00'), (5, 15, 2,'2017-04-09 10:00:00')
+
+Верное решение:
+
+Create table calendar ( id int unsigned, user_id int unsigned, doctor_id int unsigned, visit_date datetime);
+Insert into calendar (id, user_id, doctor_id, visit_date) Values (1, 1914 , 1, '2017-04-08 12:00:00'),
+(2, 12, 1, '2017-04-08 12:30:00'),(3, 4641, 2, '2017-04-09 09:00:00'),
+(4, 784, 1,'2017-04-08 13:00:00'), (5, 15, 2,'2017-04-09 10:00:00') 
+
+![423034190-b3af42ac-b570-424f-bb73-dadf7cf39b34](https://github.com/user-attachments/assets/61b7f280-0609-4bf6-becc-2f224ccb1447)
+
+3.Создайте таблицу users , в которой будут следующие поля: id — идентификатор, целые положительные числа. first_name— имя, строки до 50 символов. last_name — фамилия, строки до 60 символов. bio — биография, текст до 65000 символов.
+
+![423034259-0c30eb1c-25bc-42f3-8731-fb064ed04f5d](https://github.com/user-attachments/assets/e5abb44e-627c-4e92-96d5-868f1846cc70)
+
+Неверное решение:
+
+create table users ( id int (10) unsigned, first_name varchar (50) unsigned, last_name varchar (60) unsigned, bio text ); INSERT INTO users (id, first_name, last_name, bio) VALUES (1,'Антон','Кулик','С отличием окончил 39 лицей.'), (2,'Сергей','Давыдов',''), (3,'Дмитрий','Соколов','Профессиональный программист.')
+
+Верное решение:
+
+create table users ( id int (10) unsigned, first_name varchar (50), last_name varchar (60), bio text );
+INSERT INTO users (id, first_name, last_name, bio) VALUES (1,'Антон','Кулик','С отличием окончил 39 лицей.'),
+(2,'Сергей','Давыдов',''), (3,'Дмитрий','Соколов','Профессиональный программист.')
+
+![423034532-2713ba61-ab0d-4490-8b05-c56a7af914be](https://github.com/user-attachments/assets/7eef82e7-6f90-490c-a19e-1541eeb370ee)
+
