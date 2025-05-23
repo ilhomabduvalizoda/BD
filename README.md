@@ -158,10 +158,12 @@ SELECT name, price FROM products WHERE count > 0 ORDER BY price ASC LIMIT 4;
 Решение:
 SELECT * FROM orders WHERE sum >= 3200 ORDER BY date DESC LIMIT 3;
 
+![428265526-fa96cebd-39df-4326-8fa4-945fb33445b4](https://github.com/user-attachments/assets/43440fcd-bf7c-4c93-bb88-d7c063e7d925)
 
 
 4.Создайте данную таблицу:
-image
+
+![428264393-0d3eade9-f234-43c8-825d-966ed292ffb2](https://github.com/user-attachments/assets/b0a5d2fc-519c-4f35-97f7-10e499636371)
 
 Решение:
 CREATE TABLE products (
@@ -189,20 +191,27 @@ INSERT INTO products (id, name, count, price) VALUES
 (15, 'Блендер', 0, 5500.00),
 (16, 'Газовая плита', 5, 11900.00),
 (17, 'Клавиатура', 3, 1800.00);
-image
 
-image
+![428266416-7e86e58c-6476-43c1-8239-8a301ebd0654](https://github.com/user-attachments/assets/5ed7d2b9-ceab-4658-a8d5-76333cc659cb)
+
+![428266495-a3a53f5d-5ca0-4c44-93a3-16ed39a2581e](https://github.com/user-attachments/assets/11c73eac-dce7-4934-b412-3e37e7e452da)
+
 
 5.Из таблицы ниже сделать выборку на основе задания: Сайт выводит товары по 5 штук. Выберите из таблицы products товары, которые пользователи увидят на 3 странице каталога при сортировке в порядке возрастания цены (price).
-image
+
+
 
 Решение:
 SELECT name, price FROM products ORDER BY price ASC LIMIT 5 OFFSET 10;
-image
+
+![428268943-193aed61-cd78-48cc-9708-2f1e00853770](https://github.com/user-attachments/assets/98e660ac-2a8f-4920-bf5c-b70b4fc55d94)
+
 
 Лр 6
 1.Создайте таблицу orders для хранения списка заказов: id — идентификатор, целое положительное. user_id — идентификатор пользователя, который оформил заказ. Целое положительное, NULL запрещен. amount — стоимость заказа. Целое положительное число не более 1 млн. NULL запрещен, по умолчанию 0. created — дата и время создания заказа. NULL запрещен. state — статус заказа. Выбор из new, cancelled, in_progress, delivered, completed. Можно выбрать только один вариант. NULL запрещен. По умолчанию должен стоять new. Добавьте 3 записи так, чтобы получалась таблица ниже:
-image
+
+![433007313-71fe4878-4b0b-458a-a12e-be147e9bd201](https://github.com/user-attachments/assets/8ae470f9-bba2-402e-9814-139dca5fff9f)
+
 
 Решение:
 CREATE TABLE orders (
@@ -220,10 +229,14 @@ INSERT INTO orders (user_id, amount, created) VALUES (90, 249, '2018-02-01 19:13
 INSERT INTO orders (user_id, amount, created) VALUES (78, 2200, '2018-02-01 22:43:09');
 
 SELECT * FROM orders;
-image
+
+![433007396-2129e63a-67bc-4d85-9b5c-bd9270ac931d](https://github.com/user-attachments/assets/d4dae31e-d279-4910-9daa-56fdc2c7987a)
+
 
 2.Создайте таблицу users для хранения списка пользователей сайта: id — идентификатор, целое положительное. first_name — имя, строка до 20 символов. NULL запрещен. last_name — фамилия, строка до 20 символов. NULL запрещен. patronymic — отчество, строка до 20 символов. NULL запрещен, по умолчанию пустая строка. is_active — отметка об активности пользователя. Логическое поле, по умолчанию TRUE. is_superuser — отметка администратора. Логическое поле, по умолчанию FALSE. Добавьте 3 записи так, чтобы получалась таблица
-image
+
+![433007463-64a74af7-1c09-40c3-a52a-34c4710709b1](https://github.com/user-attachments/assets/705d24e0-2c95-49cd-bb30-2c6b1fe7db11)
+
 
 Решение:
 CREATE TABLE users (
@@ -248,7 +261,9 @@ INSERT INTO users (first_name, last_name, is_active, is_superuser)
 VALUES ('Андрей', 'Крючков', FALSE, FALSE);
 
 SELECT * FROM users;
-image
+
+![433007827-733adbb7-e712-4fb8-a8ff-c5211619a2da](https://github.com/user-attachments/assets/d4208e19-2e1e-43e5-95d2-36f2db2c2002)
+
 
 3.Создайте таблицу products для хранения товаров в интернет магазине: id — идентификатор, целое положительное. category_id — категория, целое положительное. Может принимать NULL. По умолчанию NULL. name — название, строка до 100 символов. NULL запрещен. count — количество, целое положительное до 255. NULL запрещен, по умолчанию 0. price — цена типа DECIMAL с 10 знаками, 2 из которых выделены для копеек. NULL запрещен, по умолчанию 0.00. Добавьте 3 записи так, чтобы получалась таблица
 Решение:
@@ -273,3 +288,5 @@ INSERT INTO products (name, count, price)
 VALUES ('Сникерс', 12, 50.80);
 
 SELECT * FROM products;
+
+![433008409-b5b73ac0-9edc-4d43-98ec-3570feabe363](https://github.com/user-attachments/assets/8bd1da52-d634-4a03-9f9d-b5698df9949e)
